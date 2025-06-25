@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -8,14 +10,16 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Header />
-      <About />
-      <Skills />
-      <Experience />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/experience" element={<Experience />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 }
 

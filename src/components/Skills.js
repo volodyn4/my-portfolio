@@ -1,32 +1,29 @@
-import React from 'react';
-
-function SkillBar({ name, level }) {
-  return (
-    <div style={{ marginBottom: '10px' }}>
-      {name}
-      <div style={{ background: '#eee', height: '20px', borderRadius: '5px', overflow: 'hidden' }}>
-        <div style={{ width: `${level}%`, background: '#4caf50', height: '100%' }}></div>
-      </div>
-    </div>
-  );
-}
+import React, { useState, useEffect } from 'react';
 
 function Skills() {
-  const skills = [
-    { name: 'HTML', level: 80 },
-    { name: 'CSS', level: 85 },
-    { name: 'JavaScript', level: 60 },
-    { name: 'React', level: 95 }
-  ];
+  const [skills, setSkills] = useState([]);
+
+  useEffect(() => {
+    // Имитация загрузки данных
+    setSkills([
+      { name: 'HTML', level: 90 },
+      { name: 'CSS', level: 85 },
+      { name: 'JavaScript', level: 80 },
+      { name: 'React', level: 75 }
+    ]);
+  }, []);
 
   return (
-    <section id="skills" style={{ padding: '30px' }}>
+    <section id="skills">
       <h2>Навыки</h2>
-      {skills.map((skill, index) => (
-        <SkillBar key={index} name={skill.name} level={skill.level} />
+      {skills.map((s, i) => (
+        <div key={i}>
+          {s.name}
+          <div style={{ background: '#eee' }}>
+            <div style={{ width: `${s.level}%`, background: '#4caf50' }}>{' '}</div>
+          </div>
+        </div>
       ))}
     </section>
   );
 }
-
-export default Skills;
