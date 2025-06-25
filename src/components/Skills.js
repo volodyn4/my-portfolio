@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-function Skills() {
+export default function Skills() {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    // Имитация загрузки данных
+    // имитация загрузки данных
     setSkills([
       { name: 'HTML', level: 90 },
       { name: 'CSS', level: 85 },
@@ -14,13 +14,13 @@ function Skills() {
   }, []);
 
   return (
-    <section id="skills">
+    <section id="skills" style={{ padding: '30px' }}>
       <h2>Навыки</h2>
       {skills.map((s, i) => (
-        <div key={i}>
+        <div key={i} style={{ marginBottom: '10px' }}>
           {s.name}
-          <div style={{ background: '#eee' }}>
-            <div style={{ width: `${s.level}%`, background: '#4caf50' }}>{' '}</div>
+          <div style={{ background: '#eee', height: '20px', borderRadius: '5px', overflow: 'hidden' }}>
+            <div style={{ width: `${s.level}%`, background: '#4caf50', height: '100%' }} />
           </div>
         </div>
       ))}
