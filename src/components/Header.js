@@ -9,7 +9,7 @@ textDecoration: 'none'
 
 return (
 <header style={{ background: '#333', color: '#fff', padding: '20px', textAlign: 'center' }}>
-<h1>Иван Иванов</h1>
+<h1>Сергей Сергеев</h1>
 <p>Веб-разработчик</p>
 <nav>
 <a href="#about" style={navStyle}>Обо мне</a>
